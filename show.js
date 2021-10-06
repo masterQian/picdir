@@ -56,10 +56,11 @@ function createdisplay(b) {
     let src = URL.createObjectURL(b)
     srclist.push(b)
     let div = document.createElement("div")
-    div.style.paddingTop = "0.5rem"
+    div.style.paddingTop = "2.5rem"
     let div2 = document.createElement("div")
     div2.style.wordBreak = "break-all"
     div.appendChild(div2)
+	div.align = "center"
     if (b.type.indexOf("image") > -1) {
         let img = document.createElement("img")
         img.style.maxWidth = "100%"
@@ -75,6 +76,14 @@ function createdisplay(b) {
         div.appendChild(img)
         return div
     }
+	if (b.type.indexOf("pdf") > -1 || b.type.indexOf("doc") > -1){
+		let fram = document.createElement("iframe")
+		fram.width = "800"
+		fram.height = "600"
+		fram.src = src
+		div.appendChild(fram)
+		return div
+	}
     return null
 }
 //新卡片
