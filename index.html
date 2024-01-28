@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html>  
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+		<title>图片文件夹</title>
+		<link rel='stylesheet prefetch' href='picdir.css'>
+		<link rel='stylesheet prefetch' href='base.css'>
+		<script type="text/javascript" src="pdfjs/jquery.min.js"></script>  
+		<script type="text/javascript" src="pdfjs/jquery.media.js"></script>  
+		<script type="text/javascript">  
+			$(function() {  
+				$('a.media').media({width:800, height:600});  
+			});  
+		</script> 
+	</head>
+	<body>
+		<h1 class="h1 font-w300 mt-15" align="center">图片文件夹</h1>
+		<center>
+			<img id="logo" src="logo.png" width="200" height="200"/>
+		</center>
+		<h2 class="h4 font-w300 mt-15" id="filename" align="center">无文件</h2>
+		<center>
+			<button class="btn-info" style="width:120px;height:80px" id="def" onclick="select()">默认封面</button>
+			<button class="btn-primary" style="width:120px;height:80px" onclick="packAll()">合并打包</button>
+			<button class="btn-primary" style="width:120px;height:80px" onclick="packFile()">独立打包</button>
+			<button class="btn-success" style="width:120px;height:80px" onclick="extractFile()">提取文件</button>
+			<button class="btn-danger" style="width:120px;height:80px" onclick="emptyAll()">清空</button>
+		</center>
+		<div class="container positions">
+			<ul id="cardset"></ul>
+		</div>
+		<script src="common.js"></script>
+		<script src="encode.js"></script>
+		<script src="show.js"></script>
+	</body>
+</html>
